@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Challenge Alurageek</title>
+  </head>
+  <body>
+    <!-- Sección de encabezado -->
+    <header class="header">
+      <img src="./assets/Logo.svg" alt="logo" />
+    </header>
+
+    <!-- Sección main -->
+    <main class="main">
+
+      <section class="form-section">
+        <h1 class="section-title">AGREGAR PRODUCTO:</h1>
+
+        <!-- Sección del formulario -->
+        <form class="form-container" data-form>
+          <input type="text" class="text-input" placeholder="nombre..." data-nombre>
+          <input type="text" class="text-input" placeholder="precio..." data-precio>
+          <input type="text" class="text-input" placeholder="imagen..." data-imagen>
+          <span class="mensajeError" data-mensaje></span>
+          <div class="button-container">
+              <button type="submit" class="button button-submit" id="button">Enviar</button>
+              <button type="reset" class="button button-reset" id="button">Limpiar</button>
+          </div>
+        </form>
+
+      </section>
+
+      <!-- Sección de productos -->
+      <section class="products-section">
+        <h1 class="section-title">MIS PRODUCTOS:</h1>
+        <div class="products-container" data-product>
+
+          <div class="card">
+            <img src="./assets/producto-1.svg" />
+            <div class="card-container--info">
+              <p>Nombre</p>
+              <div class="card-container--value">
+                <p>$ 00.00</p>
+                <img class="card-container--icon" src="./assets/papelera.svg" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer class="footer">
+      <img src="./assets/Logo.svg" alt="logo" />
+      <p>Desarrollado por Antonio Renteria</p>
+      <small>Alura Latam | 2024</small>
+    </footer>
+  </body>
+</html>
