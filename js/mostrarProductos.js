@@ -7,7 +7,7 @@ function crearCard(nombre, precio, imagen, id) {
   const producto = document.createElement("div");
   producto.className = "card";
   producto.innerHTML = `
-    <img src="${imagen}" />
+    <img class="card-container--img" src="${imagen}" />
     <div class="card-container--info">
       <p>${nombre}</p>
       <div class="card-container--value">
@@ -24,11 +24,17 @@ function crearCard(nombre, precio, imagen, id) {
 async function listarProductos() {
   try{
     const listaAPI = await conexionAPI.listarProductos();
-    listaAPI.forEach(producto => {
-      productContainer.appendChild(
-        crearCard(producto.nombre, producto.precio, producto.imagen, producto.id)
-      )
-    });
+    if(!listaAPI.length){
+      const mensajeDeNoProductos = document.createElement("h2");
+      mensajeDeNoProductos.innerText = "No hay productos aún.";
+      productContainer.appendChild(mensajeDeNoProductos);
+    } else {
+      listaAPI.forEach(producto => {
+        productContainer.appendChild(
+          crearCard(producto.nombre, producto.precio, producto.imagen, producto.id)
+        )
+      });
+    }
   } catch {
     productContainer.innerHTML = `<h2 class="mensaje__titulo">Ha ocurrido un problema con la conexión.</h2>`
   }
